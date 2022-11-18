@@ -19,7 +19,7 @@ const getMessage = (req, res) => {
     messages.push(JSON.parse(element));
   })
   //console.log(messages);
-  res.render("showText", { messages: messages});
+//  res.render("showText", { messages: messages});
 }
 
 module.exports = { postMessage, getMessage};

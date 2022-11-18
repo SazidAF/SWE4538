@@ -27,6 +27,10 @@
     </form>
     <hr>
     <div>
+        <%for(let i=0; i<messages.length; i++){%>
+              <p><%=messages[i].sender%>:
+              <%=messages[i].message%></p>
+        <%}%>
 
     </div>
   </body>
