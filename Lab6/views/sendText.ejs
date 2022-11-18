@@ -26,6 +26,23 @@
       <input type="submit" value="Send Text" />
     </form>
     <hr>
+    <form method="POST" action="/filter">
+      <label for="sendfilter">Choose Sender:</label>
+      <select id="sendFilter" name="sendFilter">
+        <%for(let i=0; i<sender.length; i++){%>
+               <option for=<%=sender[i]%> ><%=sender[i]%></option>
+        <%}%>
+      </select>
+      <label for="recFilter">Choose recipient:</label>
+      <select id="recFilter" name="recFilter">
+        <%for(let i=0; i<receiver.length; i++){%>
+               <option for=<%=receiver[i]%> ><%=receiver[i]%></option>
+        <%}%>
+      </select>
+      <br>
+      <input type="submit" value="Refresh" />
+    </form>
+
     <div>
         <%for(let i=0; i<messages.length; i++){%>
               <p><%=messages[i].sender%>:

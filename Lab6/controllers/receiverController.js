@@ -9,6 +9,14 @@ const getMessage = (req, res) => {
   })
   return messages;
 }
+const postFilter = (req, res) => {
+  let filterBody = JSON.stringify({
+    sendFilter: req.body.sendFilter,
+    recFilter: req.body.recFilter
+  });
+  return filterBody;
+}
+
 
 const getUsers = (req, res) => {
   const content = fs.readFileSync(__dirname + '/users.txt',{ encoding: 'utf-8', flag:'r'}).toString().split(/\r?\n/);
@@ -29,4 +37,4 @@ const postMessage = (req, res) => {
 }
 
 
-module.exports = { getUsers, postMessage };
+module.exports = { getUsers, postMessage, postFilter };

@@ -5,5 +5,6 @@ const messageController = require('./controllers/messageController');
 
 router.get('/', receiverController.getUsers );
 router.post('/send',receiverController.postMessage);
+router.post('/filter', receiverController.postFilter);
 
 module.exports = router;
