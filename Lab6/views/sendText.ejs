@@ -8,15 +8,26 @@
   </head>
   <body>
     <form method="POST" action="/send">
+      <label for="Sender">Choose Sender:</label>
+      <select id="Sender" name="sender">
+        <%for(let i=0; i<sender.length; i++){%>
+               <option for=<%=sender[i]%> ><%=sender[i]%></option>
+        <%}%>
+      </select>
       <label for="receiver">Choose recipient:</label>
       <select id="receiver" name="receiver">
         <%for(let i=0; i<receiver.length; i++){%>
                <option for=<%=receiver[i]%> ><%=receiver[i]%></option>
         <%}%>
       </select>
+      <br>
       <label for="message">Message</label><br />
       <input type="text" id="message" name="message" /><br />
       <input type="submit" value="Send Text" />
     </form>
+    <hr>
+    <div>
+
+    </div>
   </body>
 </html>
