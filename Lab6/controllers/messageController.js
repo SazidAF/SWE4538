@@ -14,7 +14,12 @@ const getMessage = (req, res) => {
   const content = fs.readFileSync(__dirname + '/messages.txt', {encoding:'utf-8', flag:'r'}).toString().split(/\r?\n/);
   content.pop();
 //  console.log(JSON.parse(content[0]));
-  res.redirect('/');
+  let messages = [];
+  content.forEach(element => {
+    messages.push(JSON.parse(element));
+  })
+  //console.log(messages);
+  res.render("showText", { messages: messages});
 }
 
 module.exports = { postMessage, getMessage};
